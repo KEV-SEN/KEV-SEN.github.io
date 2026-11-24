@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kevin Olais | Portafolio</title>
+<meta name="description" content="Portafolio profesional de Kevin de Jesus Olais Rovirosa, desarrollador de software.">
+
+<style>
+/* =========================
+   VARIABLES Y CONFIGURACIÓN
+========================= */
+:root {
+    --bg: #f7f7f5;
+    --surface: #ffffff;
+    --text: #181818;
+    --muted: #6c6c6c;
+    --accent: #176b58;
+    --accent-light: #e7f0ec;
+    --border: #e5e5e2;
+    --dark: #171717;
+
+    --radius: 18px;
+    --max-width: 1120px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.container {
+    width: min(var(--max-width), 92%);
+    margin: auto;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(247,247,245,.94);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    min-height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: -.04em;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: .92rem;
+    color: var(--muted);
+    transition: .2s;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+.menu-button {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: var(--text);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    padding: 100px 0 90px;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.5fr .7fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.eyebrow {
+    color: var(--accent);
+    text-transform: uppercase;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+}
+
+.hero h1 {
+    font-size: clamp(2.6rem, 6vw, 5rem);
+    line-height: 1.08;
+    letter-spacing: -.055em;
+    margin: 20px 0;
+    max-width: 750px;
+}
+
+.hero h1 span {
+    color: var(--accent);
+}
+
+.hero-description {
+    max-width: 650px;
+    color: var(--muted);
+    font-size: 1.08rem;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 22px;
+    border: 1px solid var(--text);
+    border-radius: 8px;
+    font-size: .94rem;
+    font-weight: 600;
+    transition: .25s;
+}
+
+.button-primary {
+    background: var(--dark);
+    color: white;
+}
+
+.button-primary:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.button-secondary:hover {
+    background: var(--accent-light);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* FOTO */
+
+.photo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-frame {
+    width: 310px;
+    height: 360px;
+    border-radius: 160px 160px 24px 24px;
+    overflow: hidden;
+    background: #e8e8e5;
+    border: 1px solid var(--border);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    /* Ajuste vertical para centrar rostro y hombros */
+    object-position: center 22%;
+}
+
+/* =========================
+   SECCIONES
+========================= */
+
+section:not(.hero) {
+    padding: 85px 0;
+    border-top: 1px solid var(--border);
+}
+
+.section-header {
+    margin-bottom: 40px;
+}
+
+.section-number {
+    color: var(--accent);
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+}
+
+.section-header h2 {
+    font-size: 2.2rem;
+    letter-spacing: -.04em;
+    margin-top: 8px;
+}
+
+.section-header p {
+    color: var(--muted);
+    margin-top: 10px;
+    max-width: 650px;
+}
+
+/* =========================
+   PERFIL
+========================= */
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 24px;
+}
+
+.panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 30px;
+    border-radius: var(--radius);
+}
+
+.panel h3 {
+    margin-bottom: 16px;
+    font-size: 1.1rem;
+}
+
+.profile-text {
+    color: var(--muted);
+}
+
+.contact-list {
+    list-style: none;
+}
+
+.contact-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    overflow-wrap: anywhere;
+}
+
+.contact-list li:last-child {
+    border-bottom: none;
+}
+
+.contact-list a:hover {
+    color: var(--accent);
+}
+
+/* =========================
+   FORMACIÓN
+========================= */
+
+.timeline {
+    display: grid;
+    gap: 20px;
+}
+
+.timeline-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 30px;
+    border-radius: var(--radius);
+    position: relative;
+}
+
+.timeline-item h3 {
+    font-size: 1.15rem;
+}
+
+.timeline-item .institution {
+    color: var(--accent);
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+.timeline-item p {
+    color: var(--muted);
+}
+
+.timeline-item .date {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--accent);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: .8rem;
+    margin-top: 12px;
+}
+
+/* =========================
+   HABILIDADES
+========================= */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.skill-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 28px;
+    border-radius: var(--radius);
+}
+
+.skill-card h3 {
+    margin-bottom: 20px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    background: #f3f3f1;
+    border: 1px solid var(--border);
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: .9rem;
+    transition: .2s;
+}
+
+.tag:hover {
+    background: var(--accent-light);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* =========================
+   PROYECTOS
+========================= */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.project {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 30px;
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    transition: transform .25s, border-color .25s;
+}
+
+.project:hover {
+    transform: translateY(-4px);
+    border-color: #b8cfc6;
+}
+
+.project-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.project h3 {
+    font-size: 1.25rem;
+    letter-spacing: -.02em;
+}
+
+.project-index {
+    color: var(--accent);
+    font-size: .85rem;
+    font-weight: 700;
+}
+
+.project p {
+    color: var(--muted);
+    margin-bottom: 22px;
+}
+
+.project .tags {
+    margin-bottom: 25px;
+}
+
+.project-link {
+    margin-top: auto;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   CONTACTO
+========================= */
+
+.contact-box {
+    background: var(--dark);
+    color: white;
+    border-radius: 24px;
+    padding: 50px;
+}
+
+.contact-box h2 {
+    font-size: 2.4rem;
+    letter-spacing: -.04em;
+}
+
+.contact-box p {
+    color: #c6c6c6;
+    max-width: 650px;
+    margin: 15px 0 25px;
+}
+
+.contact-box .button {
+    color: white;
+    border-color: white;
+}
+
+.contact-box .button:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 30px 0;
+    border-top: 1px solid var(--border);
+    margin-top: 30px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    color: var(--muted);
+    font-size: .9rem;
+}
+
+/* =========================
+   ANIMACIONES
+========================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .6s ease, transform .6s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:850px) {
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .photo-wrapper {
+        order: -1;
+    }
+
+    .photo-frame {
+        width: 250px;
+        height: 300px;
+    }
+
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:650px) {
+
+    .navbar {
+        min-height: 65px;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: var(--bg);
+        padding: 20px 4%;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero {
+        padding: 55px 0;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    section:not(.hero) {
+        padding: 55px 0;
+    }
+
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .panel,
+    .skill-card,
+    .project,
+    .timeline-item {
+        padding: 23px;
+    }
+
+    .contact-box {
+        padding: 30px;
+    }
+
+    .contact-box h2 {
+        font-size: 1.9rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header>
+    <div class="container navbar">
+
+        <a href="#inicio" class="logo">
+            Kevin Olais <span>.</span>
+        </a>
+
+        <button class="menu-button" id="menuButton" aria-label="Abrir menú" aria-expanded="false">
+            ☰
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#perfil">Perfil</a></li>
+            <li><a href="#formacion">Formación</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+
+    </div>
+</header>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<main>
+
+<section class="hero" id="inicio">
+    <div class="container hero-content">
+
+        <div>
+            <p class="eyebrow">Desarrollo de software multiplataforma</p>
+
+            <h1>
+                Kevin de Jesus<br>
+                Olais <span>Rovirosa.</span>
+            </h1>
+
+            <p class="hero-description">
+                Técnico Superior Universitario en Tecnologías de la Información,
+                Área Desarrollo de Software Multiplataforma, y estudiante de
+                Ingeniería en Desarrollo y Gestión de Software.
+                Construyo, pruebo y despliego soluciones digitales.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#proyectos" class="button button-primary">
+                    Explorar proyectos
+                </a>
+
+                <a href="https://github.com/KEV-SEN"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="button button-secondary">
+                    GitHub ↗
+                </a>
+            </div>
+        </div>
+
+        <div class="photo-wrapper">
+            <div class="photo-frame">
+                <img
+                    src="Foto.JPEG"
+                    alt="Fotografía profesional de Kevin de Jesus Olais Rovirosa"
+                    loading="eager">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================
+     PERFIL
+========================= -->
+
+<section id="perfil">
+    <div class="container">
+
+        <div class="section-header reveal">
+            <span class="section-number">01 / PERFIL</span>
+            <h2>Perfil profesional</h2>
+        </div>
+
+        <div class="profile-grid">
+
+            <div class="panel reveal">
+                <h3>Sobre mí</h3>
+
+                <p class="profile-text">
+                    Profesional en formación en desarrollo de software
+                    multiplataforma, con preparación técnica y continuidad
+                    académica en ingeniería.
+
+                    Cuento con conocimientos en bases de datos relacionales
+                    y no relacionales, pruebas de software y desarrollo y
+                    publicación de proyectos, desde etapas iniciales hasta
+                    ambientes de producción.
+
+                    Mi enfoque está en desarrollar soluciones funcionales,
+                    aprender nuevas tecnologías y aplicar buenas prácticas
+                    durante el ciclo de desarrollo.
+                </p>
+            </div>
+
+            <div class="panel reveal">
+                <h3>Información de contacto</h3>
+
+                <ul class="contact-list">
+
+                    <li>
+                        <strong>Correo:</strong>
+                        <a href="mailto:korix404@gmail.com">
+                            korix404@gmail.com
+                        </a>
+                    </li>
+
+                    <li>
+                        <strong>WhatsApp:</strong>
+                        <a href="https://wa.me/522201470078"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Enviar mensaje ↗
+                        </a>
+                    </li>
+
+                    <li>
+                        <strong>Ubicación:</strong>
+                        Naucalpan de Juárez, Estado de México
+                    </li>
+
+                    <li>
+                        <strong>GitHub:</strong>
+                        <a href="https://github.com/KEV-SEN"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            KEV-SEN ↗
+                        </a>
+                    </li>
+
+                    <li>
+                        <strong>LinkedIn:</strong>
+                        <a href="https://www.linkedin.com/in/kevin-de-jesus-rovirosa-54886737a/"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Perfil ↗
+                        </a>
+                    </li>
+
+                </ul>
+
+                <p class="profile-text" style="margin-top:15px;font-size:.9rem;">
+                    Preferencia de contacto: WhatsApp.
+                    Horario para llamadas: lunes a viernes,
+                    de 18:00 a 20:00 h.
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+     FORMACIÓN
+========================= -->
+
+<section id="formacion">
+    <div class="container">
+
+        <div class="section-header reveal">
+            <span class="section-number">02 / EDUCACIÓN</span>
+            <h2>Formación académica</h2>
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item reveal">
+
+                <h3>Ingeniería en Desarrollo y Gestión de Software</h3>
+
+                <p class="institution">
+                    Universidad Tecnológica Fidel Velázquez
+                </p>
+
+                <p>
+                    Formación universitaria orientada al desarrollo,
+                    gestión y construcción de soluciones de software.
+                </p>
+
+                <span class="date">
+                    En curso · Próximo a concluir
+                </span>
+
+            </div>
+
+            <div class="timeline-item reveal">
+
+                <h3>
+                    Técnico Superior Universitario en Tecnologías de la Información
+                </h3>
+
+                <p class="institution">
+                    Área Desarrollo de Software Multiplataforma
+                </p>
+
+                <p>
+                    Formación técnica enfocada en desarrollo de aplicaciones
+                    y soluciones de software multiplataforma.
+                </p>
+
+                <span class="date">
+                    Universidad Tecnológica Fidel Velázquez
+                </span>
+
+            </div>
+
+            <div class="timeline-item reveal">
+
+                <h3>TOEIC Bridge</h3>
+
+                <p class="institution">
+                    Certificación de inglés
+                </p>
+
+                <p>
+                    Nivel A1 en Listening y nivel A1 en Reading.
+                </p>
+
+                <span class="date">
+                    9 de abril de 2025
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================
+     HABILIDADES
+========================= -->
+
+<section id="habilidades">
+    <div class="container">
+
+        <div class="section-header reveal">
+            <span class="section-number">03 / TECNOLOGÍAS</span>
+            <h2>Habilidades técnicas</h2>
+
+            <p>
+                Tecnologías, herramientas y conocimientos relacionados
+                con mi formación y proyectos de desarrollo.
+            </p>
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skill-card reveal">
+                <h3>Lenguajes de programación</h3>
+
+                <div class="tags">
+                    <span class="tag">Kotlin</span>
+                    <span class="tag">Java</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">HTML5</span>
+                    <span class="tag">CSS3</span>
+                </div>
+            </div>
+
+            <div class="skill-card reveal">
+                <h3>Herramientas y plataformas</h3>
+
+                <div class="tags">
+                    <span class="tag">Git</span>
+                    <span class="tag">GitHub</span>
+                    <span class="tag">Android</span>
+                    <span class="tag">AJAX</span>
+                    <span class="tag">PWA</span>
+                </div>
+            </div>
+
+            <div class="skill-card reveal">
+                <h3>Bases de datos</h3>
+
+                <div class="tags">
+                    <span class="tag">SQL</span>
+                    <span class="tag">NoSQL</span>
+                    <span class="tag">Modelado de datos</span>
+                </div>
+
+                <p class="profile-text" style="margin-top:18px">
+                    Conocimientos en estructuras, modelos y manejo
+                    de bases de datos relacionales y no relacionales.
+                </p>
+            </div>
+
+            <div class="skill-card reveal">
+                <h3>Desarrollo y calidad</h3>
+
+                <div class="tags">
+                    <span class="tag">Pruebas de software</span>
+                    <span class="tag">Despliegue</span>
+                    <span class="tag">Producción</span>
+                    <span class="tag">Desarrollo web</span>
+                </div>
+
+                <p class="profile-text" style="margin-top:18px">
+                    Experiencia formativa en el desarrollo y publicación
+                    de proyectos, desde su construcción inicial
+                    hasta su puesta en producción.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================
+     PROYECTOS
+========================= -->
+
+<section id="proyectos">
+    <div class="container">
+
+        <div class="section-header reveal">
+            <span class="section-number">04 / PORTAFOLIO</span>
+            <h2>Proyectos seleccionados</h2>
+
+            <p>
+                Algunos proyectos desarrollados como parte de mi
+                aprendizaje y práctica en desarrollo de software.
+            </p>
+        </div>
+
+        <div class="projects-grid">
+
+            <!-- Proyecto 1 -->
+
+            <article class="project reveal">
+
+                <div class="project-top">
+                    <h3>Android-MantStock</h3>
+                    <span class="project-index">01</span>
+                </div>
+
+                <p>
+                    Proyecto de desarrollo de aplicación Android
+                    con Kotlin. Orientado a la implementación
+                    de soluciones móviles.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Kotlin</span>
+                    <span class="tag">Android</span>
+                </div>
+
+                <a class="project-link"
+                   href="https://github.com/KEV-SEN/Android-MantStock"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Ver repositorio ↗
+                </a>
+
+            </article>
+
+            <!-- Proyecto 2 -->
+
+            <article class="project reveal">
+
+                <div class="project-top">
+                    <h3>Tic Tac Toe</h3>
+                    <span class="project-index">02</span>
+                </div>
+
+                <p>
+                    Juego de tres en raya desarrollado en JavaScript,
+                    con lógica de juego e interacción desde
+                    una interfaz web.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">HTML</span>
+                </div>
+
+                <a class="project-link"
+                   href="https://github.com/KEV-SEN/tic-tac-toe"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Ver repositorio ↗
+                </a>
+
+            </article>
+
+            <!-- Proyecto 3 -->
+
+            <article class="project reveal">
+
+                <div class="project-top">
+                    <h3>Mamba Negra</h3>
+                    <span class="project-index">03</span>
+                </div>
+
+                <p>
+                    Proyecto de tienda en línea enfocado en
+                    productos y servicios relacionados con tatuajes.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">HTML</span>
+                    <span class="tag">Desarrollo web</span>
+                </div>
+
+                <a class="project-link"
+                   href="https://github.com/KEV-SEN/Mamba-Negra"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Ver repositorio ↗
+                </a>
+
+            </article>
+
+            <!-- Proyecto 4 -->
+
+            <article class="project reveal">
+
+                <div class="project-top">
+                    <h3>Ventas</h3>
+                    <span class="project-index">04</span>
+                </div>
+
+                <p>
+                    Proyecto de sitio web orientado a la venta
+                    de productos en línea.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">CSS</span>
+                    <span class="tag">Web</span>
+                </div>
+
+                <a class="project-link"
+                   href="https://github.com/KEV-SEN/Ventas"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Ver repositorio ↗
+                </a>
+
+            </article>
+
+            <!-- Proyecto 5 -->
+
+            <article class="project reveal">
+
+                <div class="project-top">
+                    <h3>Traductor</h3>
+                    <span class="project-index">05</span>
+                </div>
+
+                <p>
+                    Aplicación de traducción de diez palabras
+                    utilizando JavaScript y AJAX.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">AJAX</span>
+                </div>
+
+                <a class="project-link"
+                   href="https://github.com/KEV-SEN/Traductor"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Ver repositorio ↗
+                </a>
+
+            </article>
+
+            <!-- Proyecto 6 -->
+
+            <article class="project reveal">
+
+                <div class="project-top">
+                    <h3>NOTTIA</h3>
+                    <span class="project-index">06</span>
+                </div>
+
+                <p>
+                    Proyecto de aplicación web progresiva
+                    orientada a la reproducción o experiencia musical.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">PWA</span>
+                </div>
+
+                <p class="profile-text">
+                    Proyecto en repositorio privado.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================
+     CONTACTO
+========================= -->
+
+<section id="contacto">
+    <div class="container">
+
+        <div class="contact-box reveal">
+
+            <span class="section-number" style="color:#8dd5bd">
+                05 / CONTACTO
+            </span>
+
+            <h2>Conectemos.</h2>
+
+            <p>
+                Si deseas conocer más sobre mis proyectos,
+                colaborar o contactarme por una oportunidad
+                profesional, puedes escribirme directamente.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="mailto:korix404@gmail.com"
+                   class="button">
+                    Enviar correo ↗
+                </a>
+
+                <a href="https://wa.me/522201470078"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="button">
+                    WhatsApp ↗
+                </a>
+
+                <a href="https://www.linkedin.com/in/kevin-de-jesus-rovirosa-54886737a/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="button">
+                    LinkedIn ↗
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+</main>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+    <div class="container footer-content">
+
+        <p>
+            © <span id="year"></span> Kevin de Jesus Olais Rovirosa
+        </p>
+
+        <p>
+            Diseñado y desarrollado por Kevin Olais.
+        </p>
+
+    </div>
+</footer>
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+// Menú responsive
+const menuButton = document.getElementById("menuButton");
+const navLinks = document.getElementById("navLinks");
+
+menuButton.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("active");
+
+    menuButton.setAttribute("aria-expanded", isOpen);
+    menuButton.textContent = isOpen ? "✕" : "☰";
+});
+
+// Cerrar menú al seleccionar enlace
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.textContent = "☰";
+    });
+});
+
+// Año automático
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+// Animaciones al entrar en pantalla
+const observer = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("visible");
+
+            observer.unobserve(entry.target);
+        }
+
+    });
+
+}, {
+    threshold: 0.12
+});
+
+document.querySelectorAll(".reveal").forEach(element => {
+    observer.observe(element);
+});
+
+</script>
+
+</body>
+</html>
